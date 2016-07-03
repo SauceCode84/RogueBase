@@ -7,7 +7,7 @@ namespace RogueBase
 {
     class Program
     {
-        public static Player hero = new Player("MainCharacter");
+        public Player hero = new Player("MainCharacter");
 
         static void Main(string[] args)
         {

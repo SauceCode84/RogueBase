@@ -30,7 +30,7 @@ namespace RogueBase.Items
 
         public void Consume()
         {
-            //
+            // unable to access  public Player hero
         }
     }
 }
