@@ -18,6 +18,7 @@ namespace RogueBase.Classes
             name = newName;
             healthMax = 100;
             health = healthMax;
+            inventory = new Storage(5);
         }
 
         public void ChangeHealth(int change)
