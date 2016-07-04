@@ -11,7 +11,7 @@ namespace RogueBase.Items
         public int sellValue { get; set; }
         public bool consumable { get; set; }
 
-        PotionHealth()
+        public PotionHealth()
         {
             name = "Health Potion";
             sellValue = 100;
@@ -28,9 +28,10 @@ namespace RogueBase.Items
             //
         }
 
-        public void Consume()
+        public void Consume(IActor target)
         {
-            // unable to access  public Player hero
+            target.ChangeHealth(30);
+            //target.inventory.ItemRemove(this); // ??
         }
     }
 }

@@ -9,9 +9,9 @@ namespace RogueBase.Classes
     {
         public Storage inventory { get; set; } 
 
-        public string name { get; private set; }
-        public int health { get; private set; }
-        public int healthMax { get; private set; }
+        public string name { get; set; }
+        public int health { get; set; }
+        public int healthMax { get; set; }
 
         public Player(string newName)
         {
@@ -20,8 +20,11 @@ namespace RogueBase.Classes
             health = healthMax;
         }
 
-        public void ChangeHealth(int newHealth)
+        public void ChangeHealth(int change)
         {
+            int newHealth = health;
+            newHealth += change;
+
             if (newHealth <= 0)
                 health = 0;
             else if (newHealth > healthMax)

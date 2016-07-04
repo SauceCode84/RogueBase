@@ -13,6 +13,6 @@ namespace RogueBase.Interfaces
 
         void Equip();
         void Sell();
-        void Consume();
+        void Consume(IActor target);
     }
 }

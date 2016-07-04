@@ -5,10 +5,14 @@ using System;
 
 namespace RogueBase.Interfaces
 {
-    public class IActor
+    public interface IActor
     {
         string name { get; set; }
         int health { get; set; }
         int healthMax { get; set; }
+
+        Storage inventory { get; set; }
+
+        void ChangeHealth(int newHealth);
     }
 }
