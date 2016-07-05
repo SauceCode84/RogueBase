@@ -6,12 +6,8 @@
 
         int SellValue { get; set; }
 
-        bool Consumable { get; set; }
-
         void Equip();
 
         void Sell();
-
-        void Consume(IActor actor);
     }
 }
