@@ -28,7 +28,7 @@ namespace RogueBase
             Console.WriteLine();
             
             // call directly from player inventory index
-            hero.inventory.ItemGetAtIndex(0).Consume(hero, hero.inventory.ItemGetAtIndex(0));
+            hero.inventory.ItemGetAtIndex(0).Consume(hero);
 
             Console.WriteLine($"{hero.name}'s HP: {hero.health}"); // 80
             Console.WriteLine($"Items held: {hero.inventory.ItemGetCount()}"); // 0

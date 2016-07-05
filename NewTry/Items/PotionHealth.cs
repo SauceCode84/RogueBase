@@ -28,12 +28,10 @@ namespace RogueBase.Items
             //
         }
 
-        public void Consume(IActor actor, Iitem item)
+        public void Consume(IActor actor)
         {
-            //item = new PotionHealth();
             actor.ChangeHealth(30);
-            actor.inventory.ItemRemove(item);
-            //actor.inventory.ItemRemove(this); // ??
+            actor.inventory.ItemRemove(this);
         }
     }
 }
