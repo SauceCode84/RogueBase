@@ -14,7 +14,7 @@ namespace RogueBase
             Player hero = new Player("MainCharacter");
 
             Console.WriteLine($"{hero.name}'s HP: {hero.health}"); // 100
-            Console.WriteLine($"inventory size: {hero.inventory.ItemGetCount()}"); // 0
+            Console.WriteLine($"Items held: {hero.inventory.ItemGetCount()}"); // 0
             Console.WriteLine();
 
             hero.ChangeHealth(-50);
@@ -22,16 +22,16 @@ namespace RogueBase
             Console.WriteLine($"{hero.name}'s HP: {hero.health}"); // 50
             Console.WriteLine();
 
-            PotionHealth testPotion = new PotionHealth();
-            hero.inventory.ItemAdd(testPotion);
+            hero.inventory.ItemAdd(new PotionHealth()); // add new potion to inventory
 
-            Console.WriteLine($"inventory size: {hero.inventory.ItemGetCount()}"); // 1
+            Console.WriteLine($"Items held: {hero.inventory.ItemGetCount()}"); // 1
             Console.WriteLine();
-
-            testPotion.Consume(hero, testPotion);
+            
+            // call directly from player inventory index
+            hero.inventory.ItemGetAtIndex(0).Consume(hero, hero.inventory.ItemGetAtIndex(0));
 
             Console.WriteLine($"{hero.name}'s HP: {hero.health}"); // 80
-            Console.WriteLine($"inventory size: {hero.inventory.ItemGetCount()}"); // 0
+            Console.WriteLine($"Items held: {hero.inventory.ItemGetCount()}"); // 0
             Console.WriteLine();
 
 

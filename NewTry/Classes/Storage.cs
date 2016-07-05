@@ -7,20 +7,21 @@ namespace RogueBase.Classes
 {
     public class Storage
     {
-        private Iitem[] inventory;
+        //renamed internal field
+        private Iitem[] _inventory;
 
         public Storage(int capacity)
         {
-            inventory = new Iitem[capacity];
+            _inventory = new Iitem[capacity];
         }
 
         public bool ItemAdd(Iitem newItem)
         {
-            for (int i = 0; i < inventory.Length; i++) // check each slot
+            for (int i = 0; i < _inventory.Length; i++)
             {
-                if (inventory[i] as Iitem != null) { continue; } // skip items
+                if (_inventory[i] as Iitem != null) { continue; } // skip items
 
-                inventory[i] = newItem; // assign item to empty slot
+                _inventory[i] = newItem; // assign item to empty slot
                 return true; // report success
             }
             return false; // inventory full
@@ -28,30 +29,35 @@ namespace RogueBase.Classes
 
         public bool ItemRemove(Iitem targetItem)
         {
-            for (int i = 0; i < inventory.Length; i++) // check each slot
+            for (int i = 0; i < _inventory.Length; i++)
             {
-                if(inventory[i] == targetItem) // when match is found
+                if(_inventory[i] == targetItem) // when match is found
                 {
-                    inventory[i] = null; // remove it
+                    _inventory[i] = null; // remove it
                     return true; // report success
                 }
             }
             return false; // no item found
         }
 
-        // return max amount of items that can be held
-        public int ItemGetCapacity()
+        public Iitem ItemGetAtIndex(int index)
         {
-            return inventory.Length;
+            Iitem atIndex = _inventory[index];
+            return atIndex;
         }
 
-        // return the amount of  items currently held
+        public int ItemGetCapacity()
+        {
+            return _inventory.Length;
+        }
+
+
         public int ItemGetCount()
         {
             int count = 0;
-            for (int i = 0; i < inventory.Length; i++)
+            for (int i = 0; i < _inventory.Length; i++)
             {
-                if (inventory[i] is Iitem) count++;
+                if (_inventory[i] is Iitem) count++;
             }
             return count;
         }
