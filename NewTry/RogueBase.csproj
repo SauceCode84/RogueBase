@@ -54,7 +54,7 @@
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Classes\Storage.cs" />
     <Compile Include="Interfaces\IActor.cs" />
-    <Compile Include="Interfaces\Iitem.cs" />
+    <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Items\PotionHealth.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

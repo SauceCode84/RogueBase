@@ -1,17 +1,14 @@
 ﻿using RogueBase.Classes;
-using RogueBase.Interfaces;
-using RogueBase.Items;
-using System;
 
 namespace RogueBase.Interfaces
 {
     public interface IActor
     {
-        string name { get; set; }
-        int health { get; set; }
-        int healthMax { get; set; }
+        string Name { get; set; }
+        int Health { get; set; }
+        int HealthMax { get; set; }
 
-        Storage inventory { get; set; }
+        Storage Inventory { get; set; }
 
         void ChangeHealth(int newHealth);
     }

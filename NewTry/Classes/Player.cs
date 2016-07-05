@@ -1,37 +1,45 @@
-﻿using RogueBase.Classes;
+﻿using System;
+
 using RogueBase.Interfaces;
-using RogueBase.Items;
-using System;
 
 namespace RogueBase.Classes
 {
-    public class Player : IActor
+    public class Player :
+        IActor
     {
-        public Storage inventory { get; set; } 
-
-        public string name { get; set; }
-        public int health { get; set; }
-        public int healthMax { get; set; }
-
         public Player(string newName)
         {
-            name = newName;
-            healthMax = 100;
-            health = healthMax;
-            inventory = new Storage(5);
+            Name = newName;
+            HealthMax = 100;
+            Health = HealthMax;
+            Inventory = new Storage(5);
         }
+
+        public string Name { get; set; }
+
+        public int Health { get; set; }
+
+        public int HealthMax { get; set; }
+
+        public Storage Inventory { get; set; }
 
         public void ChangeHealth(int change)
         {
-            int newHealth = health;
+            int newHealth = Health;
             newHealth += change;
 
             if (newHealth <= 0)
-                health = 0;
-            else if (newHealth > healthMax)
-                health = healthMax;
+            {
+                Health = 0;
+            }
+            else if (newHealth > HealthMax)
+            {
+                Health = HealthMax;
+            }
             else
-                health = newHealth;
+            {
+                Health = newHealth;
+            }
         }
     }
 }

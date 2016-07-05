@@ -1,18 +1,17 @@
-﻿using RogueBase.Classes;
-using RogueBase.Interfaces;
-using RogueBase.Items;
-using System;
-
-namespace RogueBase.Interfaces
+﻿namespace RogueBase.Interfaces
 {
-    public interface Iitem
+    public interface IItem
     {
-        string name { get; set; }
-        int sellValue { get; set; }
-        bool consumable { get; set; }
+        string Name { get; set; }
+
+        int SellValue { get; set; }
+
+        bool Consumable { get; set; }
 
         void Equip();
+
         void Sell();
+
         void Consume(IActor actor);
     }
 }

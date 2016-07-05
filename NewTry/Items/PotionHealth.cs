@@ -5,17 +5,17 @@ using System;
 
 namespace RogueBase.Items
 {
-    public class PotionHealth : Iitem
+    public class PotionHealth : IItem
     {
-        public string name { get; set; }
-        public int sellValue { get; set; }
-        public bool consumable { get; set; }
+        public string Name { get; set; }
+        public int SellValue { get; set; }
+        public bool Consumable { get; set; }
 
         public PotionHealth()
         {
-            name = "Health Potion";
-            sellValue = 100;
-            consumable = true;
+            Name = "Health Potion";
+            SellValue = 100;
+            Consumable = true;
         }
 
         public void Equip()
