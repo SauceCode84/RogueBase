@@ -1,20 +1,21 @@
-﻿using RogueBase.Interfaces;
+﻿using RogueBase.Classes;
+using RogueBase.Interfaces;
 
 namespace RogueBase.Items
 {
     public class PotionHealth :
         IConsumableItem
     {
-        public string Name { get; set; }
-
-        public int SellValue { get; set; }
-        
         public PotionHealth()
         {
             Name = "Health Potion";
             SellValue = 100;
         }
 
+        public string Name { get; set; }
+
+        public int SellValue { get; set; }
+        
         public void Equip()
         {
             //
@@ -25,10 +26,9 @@ namespace RogueBase.Items
             //
         }
 
-        public void Consume(IActor actor)
+        public void Consume(Entity entity)
         {
-            actor.ChangeHealth(30);
-            actor.Inventory.ItemRemove(this);
+            entity.Health += 30;
         }
     }
 }

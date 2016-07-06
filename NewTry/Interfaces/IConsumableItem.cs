@@ -1,8 +1,10 @@
-﻿namespace RogueBase.Interfaces
+﻿using RogueBase.Classes;
+
+namespace RogueBase.Interfaces
 {
     public  interface IConsumableItem :
         IItem
     {
-        void Consume(IActor actor);
+        void Consume(Entity entity);
     }
 }

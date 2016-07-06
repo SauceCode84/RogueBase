@@ -17,7 +17,7 @@ namespace RogueBase
             Console.WriteLine($"Items held: {hero.Inventory.ItemGetCount()}"); // 0
             Console.WriteLine();
 
-            hero.ChangeHealth(-50);
+            hero.Health -= 50;
 
             Console.WriteLine($"{hero.Name}'s HP: {hero.Health}"); // 50
             Console.WriteLine();
@@ -31,6 +31,7 @@ namespace RogueBase
             IConsumableItem item = hero.Inventory.ItemGetAtIndex(0) as IConsumableItem;
 
             item.Consume(hero);
+            hero.Inventory.ItemRemove(item);
 
             Console.WriteLine($"{hero.Name}'s HP: {hero.Health}"); // 80
             Console.WriteLine($"Items held: {hero.Inventory.ItemGetCount()}"); // 0
