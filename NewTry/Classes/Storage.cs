@@ -5,18 +5,18 @@ namespace RogueBase.Classes
     public class Storage
     {
         //renamed internal field
-        private IItem[] _items;
+        private Item[] _items;
 
         public Storage(int capacity)
         {
-            _items = new IItem[capacity];
+            _items = new Item[capacity];
         }
 
-        public bool ItemAdd(IItem newItem)
+        public bool ItemAdd(Item newItem)
         {
             for (int i = 0; i < _items.Length; i++)
             {
-                if (_items[i] as IItem != null) { continue; } // skip items
+                if (_items[i] as Item != null) { continue; } // skip items
 
                 _items[i] = newItem; // assign item to empty slot
                 return true; // report success
@@ -24,7 +24,7 @@ namespace RogueBase.Classes
             return false; // inventory full
         }
 
-        public bool ItemRemove(IItem targetItem)
+        public bool ItemRemove(Item targetItem)
         {
             for (int i = 0; i < _items.Length; i++)
             {
@@ -37,9 +37,9 @@ namespace RogueBase.Classes
             return false; // no item found
         }
 
-        public IItem ItemGetAtIndex(int index)
+        public Item ItemGetAtIndex(int index)
         {
-            IItem atIndex = _items[index];
+            Item atIndex = _items[index];
             return atIndex;
         }
 
@@ -53,7 +53,7 @@ namespace RogueBase.Classes
             int count = 0;
             for (int i = 0; i < _items.Length; i++)
             {
-                if (_items[i] is IItem) count++;
+                if (_items[i] is Item) count++;
             }
             return count;
         }

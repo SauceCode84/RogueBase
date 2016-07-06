@@ -28,7 +28,7 @@ namespace RogueBase
             Console.WriteLine();
 
             // call directly from player inventory index
-            IConsumableItem item = hero.Inventory.ItemGetAtIndex(0) as IConsumableItem;
+            ConsumableItem item = hero.Inventory.ItemGetAtIndex(0) as ConsumableItem;
 
             item.Consume(hero);
             hero.Inventory.ItemRemove(item);

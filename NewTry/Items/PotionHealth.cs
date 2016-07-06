@@ -4,7 +4,7 @@ using RogueBase.Interfaces;
 namespace RogueBase.Items
 {
     public class PotionHealth :
-        IConsumableItem
+        ConsumableItem
     {
         public PotionHealth()
         {
@@ -12,23 +12,19 @@ namespace RogueBase.Items
             SellValue = 100;
         }
 
-        public string Name { get; set; }
-
-        public int SellValue { get; set; }
-        
-        public void Equip()
+        public override void Equip(Entity entity)
         {
             //
         }
 
-        public void Sell()
+        public override void Sell()
         {
             //
         }
 
-        public void Consume(Entity entity)
+        public override void Consume(Entity entity)
         {
             entity.Health += 30;
-        }
+        }        
     }
 }

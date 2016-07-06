@@ -55,8 +55,8 @@
     <Compile Include="Classes\MagicEntity.cs" />
     <Compile Include="Classes\Player.cs" />
     <Compile Include="Classes\Storage.cs" />
-    <Compile Include="Interfaces\IConsumableItem.cs" />
-    <Compile Include="Interfaces\IItem.cs" />
+    <Compile Include="Items\ConsumableItem.cs" />
+    <Compile Include="Items\Item.cs" />
     <Compile Include="Items\PotionHealth.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
