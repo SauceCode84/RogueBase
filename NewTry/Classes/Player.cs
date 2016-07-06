@@ -12,9 +12,9 @@
             ManaMax = 25;
             Mana = ManaMax;
 
-            Inventory = new Storage(5);
+            Inventory = new Inventory(5);
         }
 
-        public Storage Inventory { get; set; }
+        public Inventory Inventory { get; set; }
     }
 }

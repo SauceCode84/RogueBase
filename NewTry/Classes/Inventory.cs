@@ -2,59 +2,74 @@
 
 namespace RogueBase.Classes
 {
-    public class Storage
+    public class Inventory
     {
-        //renamed internal field
         private Item[] _items;
 
-        public Storage(int capacity)
+        public Inventory(int capacity)
         {
             _items = new Item[capacity];
         }
 
-        public bool ItemAdd(Item newItem)
+        public bool Add(Item item)
         {
             for (int i = 0; i < _items.Length; i++)
             {
-                if (_items[i] as Item != null) { continue; } // skip items
+                if (_items[i] != null)
+                {
+                    continue;
+                } // skip items
 
-                _items[i] = newItem; // assign item to empty slot
+                _items[i] = item; // assign item to empty slot
                 return true; // report success
             }
+
             return false; // inventory full
         }
 
-        public bool ItemRemove(Item targetItem)
+        public bool Remove(Item item)
         {
             for (int i = 0; i < _items.Length; i++)
             {
-                if(_items[i] == targetItem) // when match is found
+                if(_items[i] == item) // when match is found
                 {
                     _items[i] = null; // remove it
                     return true; // report success
                 }
             }
+
             return false; // no item found
         }
 
-        public Item ItemGetAtIndex(int index)
+        public Item GetItem(int index)
         {
-            Item atIndex = _items[index];
-            return atIndex;
+            try
+            {
+                return _items[index];
+            }
+            catch
+            {
+                return null;
+            }
         }
 
-        public int ItemGetCapacity()
+        public int GetCapacity()
         {
             return _items.Length;
         }
 
-        public int ItemGetCount()
+        public int GetCount()
         {
             int count = 0;
+
             for (int i = 0; i < _items.Length; i++)
             {
-                if (_items[i] is Item) count++;
+                if (_items[i] != null)
+                {
+                    count++;
+                }
             }
+
             return count;
         }
     }
