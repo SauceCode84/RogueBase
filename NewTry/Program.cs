@@ -1,7 +1,6 @@
 ﻿using RogueBase.Classes;
-using RogueBase.Interfaces;
-using RogueBase.Items;
-using System;
+
+using RLNET;
 
 namespace RogueBase
 {
@@ -11,7 +10,7 @@ namespace RogueBase
 
         static void Main(string[] args)
         {
-            Player hero = new Player("MainCharacter");
+            /*Player hero = new Player("MainCharacter");
 
             Console.WriteLine($"{hero.Name}'s HP: {hero.Health}"); // 100
             Console.WriteLine($"Items held: {hero.Inventory.GetCount()}"); // 0
@@ -35,10 +34,12 @@ namespace RogueBase
 
             Console.WriteLine($"{hero.Name}'s HP: {hero.Health}"); // 80
             Console.WriteLine($"Items held: {hero.Inventory.GetCount()}"); // 0
-            Console.WriteLine();
+            Console.WriteLine();*/
 
-
-            Console.ReadKey();
+            RLRootConsole rootConsole = new RLRootConsole(@"Resources\ascii_8x8.png", 60, 40, 8, 8);
+            GameEngine engine = new GameEngine(rootConsole);
+                        
+            rootConsole.Run();            
         }
     }
 }
